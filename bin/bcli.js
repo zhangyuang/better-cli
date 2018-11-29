@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const commander = require('commander')
+const program = require('commander')
 const download = require('download-git-repo')
 const inquirer = require('inquirer')
 const fs = require('fs')
@@ -49,6 +49,7 @@ async function processDirectory (name) {
     return isDelete
   } catch (error) {
     // 文件夹不存在
+    return true
   }
 }
 
@@ -67,7 +68,7 @@ function renderTpl (beforePath, afterPath, params) {
   fs.writeFileSync(afterPath, result)
   exec(`rm -rf ${beforePath}`)
 }
-commander
+program
   .version('1.0.0', '-v', '--version')
   .command('init <name>')
   .action(async name => {
@@ -118,4 +119,4 @@ commander
       })
     })
   })
-commander.parse(process.argv)
+program.parse(process.argv)

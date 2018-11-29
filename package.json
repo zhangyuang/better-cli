@@ -5,7 +5,7 @@
   "author": "张宇昂",
   "sideEffects": false,
   "bin": {
-    "bcli": "src/bcli.js"
+    "bcli": "bin/bcli.js"
   },
   "scripts": {},
   "dependencies": {
