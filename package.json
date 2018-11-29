@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "better-cli",
   "author": "张宇昂",
-  "private": true,
   "sideEffects": false,
   "bin": {
     "bcli": "src/bcli.js"
@@ -11,9 +10,7 @@
   "scripts": {},
   "dependencies": {
     "commander": "^2.19.0",
-    "download-git-repo": "^1.1.0"
-  },
-  "devDependencies": {
+    "download-git-repo": "^1.1.0",
     "chalk": "^2.4.1",
     "handlebars": "^4.0.12",
     "inquirer": "^6.2.0",
