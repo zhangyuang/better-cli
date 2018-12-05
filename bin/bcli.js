@@ -55,8 +55,11 @@ async function processDirectory (name) {
 
 function processVueFiles (name, params) {
   renderTpl(`${name}/src/app-page/App.tpl`, `${name}/src/app-page/App.vue`, params) // App.vue文件模版
+  renderTpl(`${name}/src/app-page/index.js.tpl`, `${name}/src/app-page/index.js`, params) // App.vue文件模版
   renderTpl(`${name}/.babelrc.tpl`, `${name}/.babelrc`, params) // babel文件模版
-  exec(`rm -rf ${name}/src/app-page/router ${name}/src/app-apge/compontes/foo.vue ${name}/src/app-apge/compontes/bar.vue`)
+  if (!params.installRouter) {
+    exec(`rm -rf ${name}/src/app-page/router ${name}/src/app-apge/compontes/foo.vue ${name}/src/app-apge/compontes/bar.vue`)
+  }
 }
 
 function renderTpl (beforePath, afterPath, params) {
