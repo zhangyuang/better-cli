@@ -54,12 +54,9 @@ async function processDirectory (name) {
 }
 
 function processVueFiles (name, params) {
-  if (params.installRouter) {
-    renderTpl(`${name}/src/app-page/App.tpl`, `${name}/src/app-page/App.vue`, params) // App.vue文件模版
-    renderTpl(`${name}/.babelrc.tpl`, `${name}/.babelrc`, params) // babel文件模版
-  } else {
-    exec(`rm -rf ${name}/src/app-page/router ${name}/src/app-apge/compontes/foo.vue ${name}/src/app-apge/compontes/bar.vue ${name}/src/app-page/App.tpl ${name}/.babelrc.tpl`)
-  }
+  renderTpl(`${name}/src/app-page/App.tpl`, `${name}/src/app-page/App.vue`, params) // App.vue文件模版
+  renderTpl(`${name}/.babelrc.tpl`, `${name}/.babelrc`, params) // babel文件模版
+  exec(`rm -rf ${name}/src/app-page/router ${name}/src/app-apge/compontes/foo.vue ${name}/src/app-apge/compontes/bar.vue`)
 }
 
 function renderTpl (beforePath, afterPath, params) {
