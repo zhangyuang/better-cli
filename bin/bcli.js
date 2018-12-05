@@ -58,7 +58,7 @@ function processVueFiles (name, params) {
     renderTpl(`${name}/src/app-page/App.tpl`, `${name}/src/app-page/App.vue`, params) // App.vue文件模版
     renderTpl(`${name}/.babelrc.tpl`, `${name}/.babelrc`, params) // babel文件模版
   } else {
-    exec(`rm -rf ${name}/src/app-page/router && rm -rf ${name}/src/app-apge/compontes/foo.vue && rm -rf ${name}/src/app-apge/compontes/bar.vue`)
+    exec(`rm -rf ${name}/src/app-page/router ${name}/src/app-apge/compontes/foo.vue ${name}/src/app-apge/compontes/bar.vue ${name}/src/app-page/App.tpl ${name}/.babelrc.tpl`)
   }
 }
 
